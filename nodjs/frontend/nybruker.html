@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form UI</title>
+    <link rel="stylesheet" href="Registrring.css" />
+  </head>
+  <body>
+    <div id="form-container">
+      <div id="div-bilde"></div>
+      <div onsubmit="pd(e)" id="form-section">
+        <h1 class="">Registrering</h1>
+        <input class="input" type="text" placeholder="Navn" id="Navn">
+        <input class="input" type="text" placeholder="Etternavn" id="Etternavn">
+        <input class="input" type="date"  id="Dato">
+        <input class="input" type="tel" placeholder="Telefonummer" id="Telefonummer">
+        <input class="input" type="text" placeholder="Adresse" id="Adresse">
+        <input class="input" type="text" placeholder="Postnummer" id="Postnummer">
+        
+        <button class="submit-btn" onclick="Regisrte()">Regisrter </button>
+      </div>
+    </div>
+          <script defer>
+            async function Regisrte(params) {
+              var data = await fetch("http://localhost:3000/createUser", {
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                method: "POST",
+                body: JSON.stringify({
+                  Navn: document.getElementById("Navn").value,
+                  Etternavn: document.getElementById("Etternavn").value,
+                  Fødselsdato: document.getElementById("Dato").value,
+                  telefon: document.getElementById("Telefonummer").value,
+                  Adresse: document.getElementById("Adresse").value,
+                  Postnummer: document.getElementById("Postnummer").value,
+                }),
+              });
+
+              if (data.ok) {
+                console.log("BRA");
+              } else {
+                console.log("ikke bra");
+              }
+            }
+            function pd(e) {
+              e.preventDefault();
+            }
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

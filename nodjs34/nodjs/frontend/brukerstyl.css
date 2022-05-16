@@ -1,0 +1,65 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(51, 38, 116);
+  color: white;
+}
+* {
+  box-sizing: border-box;
+}
+
+input {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+hr {
+  border: 1px solid #ffffff;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #00aef8;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.Tilbakebtn {
+  padding: 14px 20px;
+  background-color: #ff8800;
+}
+
+.Tilbakebtn,
+.SignUpbtn {
+  float: left;
+  width: 500px;
+}
+
+.container {
+  padding: 16px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+  .Tilbakebtn,
+  .SignUpbtn {
+    width: 100%;
+  }
+}
